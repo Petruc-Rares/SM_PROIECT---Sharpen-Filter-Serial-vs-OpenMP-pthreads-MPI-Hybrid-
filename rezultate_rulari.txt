@@ -1,0 +1,218 @@
+serial:
+    ./serial 12000height_6000width.bmp
+    15.32s
+    14.67s
+    14.82s
+    ______ (avg)
+    14.94s
+
+omp:
+    ./omp 12000height_6000width.bmp 2
+    2 threads:
+        9.10s
+        8.58s
+        8.70s
+        _____ (avg)
+        8.79s
+
+    ./omp 12000height_6000width.bmp 4
+    4 threads:
+        5.67s
+        5.36s
+        5.54s
+        _____ (avg)
+        5.52s
+
+    ./omp 12000height_6000width.bmp 8
+    8 threads:
+        2.91s
+        2.93s
+        2.83s
+        _____ (avg)
+        2.89s
+
+    ./omp 12000height_6000width.bmp 16
+    16 threads:
+        1.82s
+        1.93s
+        1.85s
+        _____ (avg)
+        1.87s
+
+mpi:
+    mpirun -np 2 mpi 12000height_6000width.bmp
+    2 processes:
+        9.02s
+        8.78s
+        9.86s
+        _____ (avg)
+        9.22s
+
+
+    mpirun -np 4 mpi 12000height_6000width.bmp
+    4 processes:
+        5.05s
+        5.59s
+        5.07s
+        _____ (avg)
+        5.23s
+
+    mpirun -np 8 mpi 12000height_6000width.bmp
+    8 processes:
+        2.71s
+        2.81s
+        2.88s
+        _____ (avg)
+         2.8s
+
+    mpirun -np 16 --oversubscribe mpi 12000height_6000width.bmp
+    16 processes:
+        1.72s
+        1.70s
+        1.70s    
+        _____ (avg)
+        1.71s
+
+pthreads:
+    ./pthreads 12000height_6000width.bmp 4
+    2 threads:
+        8.64s
+        8.89s
+        8.78s
+        _____ (avg)
+        8.77s
+
+    ./pthreads 12000height_6000width.bmp 4
+    4 threads:
+        5.23s
+        5.22s
+        5.15s
+        _____ (avg)
+         5.2s
+
+    ./pthreads 12000height_6000width.bmp 8
+    8 threads:
+        2.80s
+        2.87s
+        2.85s
+        _____ (avg)
+        2.84s
+
+    ./pthreads 12000height_6000width.bmp 16
+    16 threads:
+        2.02s
+        1.98s
+        1.81s
+        _____ (avg)
+        1.94s
+        
+mpi_omp:
+    2 processes:
+
+        mpirun -np 2 mpi_omp 12000height_6000width.bmp 2
+        2 threads:
+            5.44s
+            5.42s
+            5.58s
+            _____ (avg)
+            5.48s
+
+        mpirun -np 2 mpi_omp 12000height_6000width.bmp 4
+        4 threads:
+            5.44s
+            5.41s
+            5.42s
+            _____ (avg)
+            5.42s
+
+        mpirun -np 2 mpi_omp 12000height_6000width.bmp 8
+        8 threads:
+            5.42s
+            5.47s
+            5.40s
+            _____ (avg)
+            5.43s
+
+    4 processes:
+
+        mpirun -np 4 mpi_omp 12000height_6000width.bmp 2
+        2 threads:
+            2.94s
+            2.95s
+            2.99s
+            _____ (avg)
+            2.96s
+
+        mpirun -np 4 mpi_omp 12000height_6000width.bmp 4
+        4 threads:
+            2.02s
+            1.96s
+            1.98s
+            _____ (avg)
+            2.00s
+
+    8 processes:
+
+        mpirun -np 8 mpi_omp 12000height_6000width.bmp 2
+        2 threads:
+            2.08s
+            2.08s
+            2.06s
+            _____ (avg)
+            2.07s
+
+mpi_pthreads:
+    2 processes:
+
+        mpirun -np 2 mpi_pthreads 12000height_6000width.bmp 2
+        2 threads:
+            2.03s
+            2.16s
+            1.85s
+            _____ (avg)
+            2.01s
+
+
+        mpirun -np 2 mpi_pthreads 12000height_6000width.bmp 4
+        4 threads:
+            2.16s
+            2.10s
+            2.09s
+            _____ (avg)
+            2.12s
+
+        mpirun -np 2 mpi_pthreads 12000height_6000width.bmp 8
+        8 threads:
+            1.93s
+            1.96s
+            1.87s
+            _____ (avg)
+            1.92s
+
+    4 processes:
+
+        mpirun -np 4 mpi_pthreads 12000height_6000width.bmp 2
+        2 threads:
+            1.39s
+            1.31s
+            1.27s
+            _____ (avg)
+            1.32s
+
+        mpirun -np 4 mpi_pthreads 12000height_6000width.bmp 4
+        4 threads:
+            0.87s
+            0.85s
+            0.86s
+            _____ (avg)
+            0.86s
+
+    8 processes:
+
+        mpirun -np 8 mpi_pthreads 12000height_6000width.bmp 2
+        2 threads:
+            0.97s
+            0.93s
+            0.96s
+            _____ (avg)
+            0.95s
