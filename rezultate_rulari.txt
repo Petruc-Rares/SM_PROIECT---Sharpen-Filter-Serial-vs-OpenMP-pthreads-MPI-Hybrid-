@@ -1,3 +1,9 @@
+Acestia sunt timpii obtinuti pe calculatorul meu local cu urmatoarele specificatii relevante:
+
+procesor: AMD Ryzen 7 5800H with Radeon Graphics            3.20 GHz
+memorie : 16 GB RAM
+system type: 64-bit operating system, x64-based processor
+
 serial:
     ./serial 12000height_6000width.bmp
     6.33s
